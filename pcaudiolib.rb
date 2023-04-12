@@ -18,7 +18,7 @@ class Pcaudiolib < Formula
   depends_on "pkg-config" => :build
 
   def install
-    system "./autogen.sh"
+    system "./autogen.sh", "--add-missing"
     system "./configure", "--prefix=#{prefix}"
     system "make", "PREFIX=#{prefix}"
     system "make", "PREFIX=#{prefix}", "install"
